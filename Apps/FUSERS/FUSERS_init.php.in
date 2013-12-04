@@ -16,7 +16,7 @@ global $app_const;
 
 $app_const = array(
     "INIT" => "yes",
-    "VERSION" => "@VERSION_FUSERS@-@RELEASE_FUSERS@",
+    "VERSION" => "@VERSION@-@RELEASE@",
     
     "FUSERS_MAINLINE" => array(
         "kind" => "static",
