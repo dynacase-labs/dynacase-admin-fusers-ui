@@ -32,8 +32,19 @@ function fusers_root(Action & $action)
         array(
             "src" => $action->parent->AddJsRef($action->GetParam("CORE_JSURL") . "/AnchorPosition.js")
         ) ,
+        /*
         array(
             "src" => $action->parent->AddJsRef($action->GetParam("CORE_PUBURL") . "/FDL/Layout/mktree.js")
+        ) ,
+        */
+        array(
+            "src" => $action->parent->AddJsRef($action->getParam("CORE_PUBURL") . "/FDC/Layout/setparamu.js")
+        ) ,
+        array(
+            "src" => $action->parent->getJsLink("FUSERS:fusers_mktreeState.js", false)
+        ) ,
+        array(
+            "src" => $action->parent->getJsLink("FUSERS:fusers_mktree.js", false)
         ) ,
         array(
             "src" => $action->parent->getJsLink("FUSERS:fusers_list.js", true)

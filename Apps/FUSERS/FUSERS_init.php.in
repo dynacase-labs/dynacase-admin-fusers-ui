@@ -34,6 +34,11 @@ $app_const = array(
         "val" => "10",
         "descr" => N_("datatable displaylength") ,
         "user" => "Y"
+    ),
+    "FUSERS_GTREESTATE" => array(
+        "kind" => "text",
+        "val" => "",
+        "desc" => N_("Group's tree state") ,
+        "user" => "Y"
     )
 );
-?>
