@@ -480,21 +480,32 @@ function setSelected() {
         return false;
     }
     $(spanNode).parent('a').addClass("selected");
+    var itemId = $(spanNode).closest('li').attr('id');
+    if (itemId) {
+        window.trees.gtree.expandToItem(itemId);
+    }
     return true;
 }
 
 function refreshLeftSide() {
     $.post("?app=FUSERS&action=FUSERS_LIST", function (data) {
         $("#flist").html(data);
-        convertTrees();
+        var gtreeState = window.trees.gtree.states.serializeStates();
+        window.trees = {
+            'gtree': new FUSERS.mktree('gtree', gtreeState, {appName: 'FUSERS', paramName: 'FUSERS_GTREESTATE'}),
+            'gtreeall': new FUSERS.mktree('gtreeall')
+        };
         setSelected();
-        focuskey(true);
+        focuskey(false);
     });
 }
 var correctedHeight = 25;
 $(document).ready(function (event) {
-    convertTrees();
-    focuskey(event);
+    window.trees = {
+        gtree: new FUSERS.mktree('gtree', undefined, {appName: 'FUSERS', paramName: 'FUSERS_GTREESTATE'}),
+        gtreeall: new FUSERS.mktree('gtreeall')
+    };
+    focuskey(false);
     refreshRightSide('user', 0, $("#SPANUsers").parent());
     var $gtree = $("#gtree");
     var gtreemargin = $gtree.outerHeight(true) - $gtree.outerHeight();
@@ -504,4 +515,3 @@ $(document).ready(function (event) {
         $(".dataTables_scrollBody").height($(this).height() - $("#buttonset").outerHeight(true) - $(".dataTables_info").parent().outerHeight(true) - $(".dataTables_length").outerHeight(true)- $(".dataTables_scrollHead").outerHeight(true) - correctedHeight);
     });
 });
-

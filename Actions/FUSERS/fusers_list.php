@@ -120,6 +120,8 @@ function fusers_list(Action & $action)
     $ngr = count($tdoc);
     if ($ngr > 0) $action->lay->set("textgroup", sprintf(_("<b>%d group(s) to refresh</b>") , $ngr));
     else $action->lay->set("textgroup", sprintf(_("No need to refresh group")));
+    
+    $action->lay->eSet("GTREESTATE", $action->getParam('FUSERS_GTREESTATE', ''));
 }
 /**
  * internal function use for choosegroup
