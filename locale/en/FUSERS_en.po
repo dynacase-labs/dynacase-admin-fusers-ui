@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dynacase-admin-uis\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-31 12:10+0200\n"
+"POT-Creation-Date: 2016-01-29 10:19+0100\n"
 "PO-Revision-Date: 2013-04-16 11:35+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -18,11 +18,43 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
+msgid " Exportation options"
+msgstr ""
+
+msgid " Importation options"
+msgstr ""
+
+#, php-format
+msgctxt "fusers_import"
+msgid "%d account processed"
+msgid_plural "%d accounts processed"
+msgstr[0] ""
+msgstr[1] ""
+
+#, php-format
+msgctxt "fusers_import"
+msgid "%d error detected"
+msgid_plural "%d errors detected"
+msgstr[0] ""
+msgstr[1] ""
+
 #, php-format
 msgid "<b>%d group(s) to refresh</b>"
 msgstr ""
 
+msgid "Abort Account Analysing"
+msgstr ""
+
+msgid "Abort Account Export"
+msgstr ""
+
+msgid "Abort Account Import"
+msgstr ""
+
 msgid "Access to user refresh function"
+msgstr ""
+
+msgid "Account import/export preferences"
 msgstr ""
 
 msgid "All groups"
@@ -34,10 +66,76 @@ msgstr ""
 msgid "All users"
 msgstr ""
 
+msgid "Analyze file accounts"
+msgstr ""
+
 msgid "Choose family to create"
 msgstr ""
 
 msgid "Create "
+msgstr ""
+
+msgid "Download Account XML Schema with documents parts"
+msgstr ""
+
+msgid "Download Standalone Account XML Schema"
+msgstr ""
+
+msgid "Export accounts"
+msgstr ""
+
+msgctxt "fusers"
+msgid "Export groups"
+msgstr ""
+
+msgctxt "fusers"
+msgid "Export roles"
+msgstr ""
+
+msgid "Export selection"
+msgstr ""
+
+msgid "Export subgroup (substitute included)"
+msgstr ""
+
+msgctxt "fusers"
+msgid "Export users"
+msgstr ""
+
+msgid "Export with Xml Schemas"
+msgstr ""
+
+msgid "Export with crypted passwords"
+msgstr ""
+
+msgid "Export with relative groups"
+msgstr ""
+
+msgid "Export with relative roles"
+msgstr ""
+
+msgid "Export with specific document informations"
+msgstr ""
+
+msgid "Fuser::Family"
+msgstr ""
+
+msgid "FuserNo"
+msgstr ""
+
+msgid "FuserYes"
+msgstr ""
+
+msgid "Fusers::AccountError"
+msgstr ""
+
+msgid "Fusers::AccountMessage"
+msgstr ""
+
+msgid "Fusers::AccountNode"
+msgstr ""
+
+msgid "Fusers::AccountReference"
 msgstr ""
 
 msgid "Generic Management"
@@ -46,11 +144,32 @@ msgstr ""
 msgid "Group's tree state"
 msgstr ""
 
+msgid "Import accounts"
+msgstr ""
+
+msgid "Import analyze only"
+msgstr ""
+
+msgid "Import is aborted. No one account updated"
+msgstr ""
+
+msgid "Import stop on error"
+msgstr ""
+
+msgid "Import successful done."
+msgstr ""
+
+msgid "Informations about Accounts XML structure"
+msgstr ""
+
 msgid "Modify type"
 msgstr ""
 
 #, php-format
 msgid "No need to refresh group"
+msgstr ""
+
+msgid "No one import done. Analysis only."
 msgstr ""
 
 msgid "Others"
@@ -86,10 +205,16 @@ msgstr "Refreshing users might take a long time. Really refresh?"
 msgid "Reset"
 msgstr ""
 
+msgid "Results will be displayed here"
+msgstr ""
+
 msgid "Save"
 msgstr ""
 
 msgid "Select an action"
+msgstr ""
+
+msgid "Select an xml account file"
 msgstr ""
 
 msgid "System"
@@ -102,6 +227,30 @@ msgid "Users"
 msgstr ""
 
 msgid "Users Management"
+msgstr ""
+
+msgid "XML Importfile"
+msgstr ""
+
+msgid "account export"
+msgstr ""
+
+msgid "account export form"
+msgstr ""
+
+msgid "account export status"
+msgstr ""
+
+msgid "account import"
+msgstr ""
+
+msgid "account import form"
+msgstr ""
+
+msgid "account import status"
+msgstr ""
+
+msgid "account import xsd"
 msgstr ""
 
 msgid "choose colums"
@@ -206,13 +355,14 @@ msgstr ""
 msgid "manage columns"
 msgstr ""
 
+msgctxt "fusers_import"
+msgid "no errors detected"
+msgstr ""
+
 msgid "refresh groups"
 msgstr ""
 
 msgid "refresh ldap entries"
-msgstr ""
-
-msgid "refresh users intranet attributes"
 msgstr ""
 
 msgid "reset to default"

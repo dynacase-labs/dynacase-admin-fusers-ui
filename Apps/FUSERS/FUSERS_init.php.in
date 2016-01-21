@@ -40,5 +40,11 @@ $app_const = array(
         "val" => "",
         "desc" => N_("Group's tree state") ,
         "user" => "Y"
-    )
+    ),
+    "FUSERS_PORTPREF" => array(
+    "kind" => "text",
+    "val" => "",
+    "desc" => N_("Account import/export preferences") ,
+    "user" => "Y"
+)
 );

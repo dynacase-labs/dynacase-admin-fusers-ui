@@ -4,15 +4,17 @@
 <input type="hidden" id="typeValue" value="[valuetype]"/>
 <div id="buttonset">
 <a href="[CORE_STANDURL]&amp;app=FDL&amp;action=OPENDOC&amp;mode=new&amp;famid=[idmain]"
-   id="mainaction" data-id="[idmain]"><img src="[imgsrcmain]"/>[TEXT:Create ][titlemain]
+   id="mainaction" data-id="[idmain]"><img src="[imgsrcmain]"/> [TEXT:Create ][titlemain]
 </a>
 <button id="otheraction" style="[style]">[TEXT:Select an action]</button>
+<a class="account-import"><img src="[IMG:accountsUpload.png|18]"/>[TEXT:Import accounts]</a>
+<a class="account-export"><img src="[IMG:accountsDownload.png|18]"/>[exportLabel]</a>
 </div>
 
 <table class="dataTable">
 <thead id="header">
     <tr>
-        <th class="icon">
+        <th class="icon" data-label="[TEXT:Fuser::Family]">
             <button title="[TEXT:filter on type]"
                     name="type" id="icon">
                 <span class="ui-icon ui-icon-radio-on"><img src="[imgsrc]" class="ui-icon-empty"/></span>
