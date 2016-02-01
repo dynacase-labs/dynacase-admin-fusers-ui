@@ -427,3 +427,102 @@ input[type="image"] {
     border-style: solid;
     border-width: 1px;
 }
+
+.fusers-port label {
+    display:block;
+    margin-bottom: 5px;
+}
+
+.fusers-port label span {
+    display: inline-block;
+    min-width:22em;
+    max-width:22em;
+}
+
+
+.fusers-port legend {
+    background: transparent;
+    font-size: 100%;
+}
+.fusers-exportResult {
+    border:none;
+    padding:0;
+    margin:0;
+    height: 2em;
+
+}
+input.fusers-export-submit,input.fusers-import-submit {
+    float: right;
+}
+a.account-export,
+a.account-import  {
+    float: right;
+}
+
+.fusers-import-form {
+    width:100%;
+    height: 100%;
+}
+.fusers-import-form-inputs  {
+    width:30em;
+    vertical-align: top;
+}
+
+.fusers-import-form-inputs input[type=file] {
+    width:100%;
+    margin-top: 1em;
+}
+.fusers-import-form-result  {
+    vertical-align: top;
+
+}
+
+.fusers-import-form-result iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+#buttonset img {
+    vertical-align: top;
+}
+.fusers-port .status {
+    display: block;
+    outline: solid 1px [COLOR_A5];
+    clear: both;
+    padding: 2em;
+    text-align: center;
+    margin-top: 3em;
+}
+.fusers-port .status img
+{
+    vertical-align: middle;
+}
+
+.fusers-port button.abort {
+    color:white;
+    background: #b20000;
+}
+a.ui-button.account-import {
+    margin-left:1em;
+}
+.fusers-port input[type=submit] {
+    width:17em;
+}
+
+.fusers-port input[type=submit]:not(.ui-state-disabled) {
+    color:white;
+    background: #2FAD1E;
+}
+.fusers-port input.fuser-analyze[type=submit]:not(.ui-state-disabled) {
+    background: #3f82ad;
+}
+
+.fusers-export-selection {
+    padding-bottom:1em;
+}
+.fusers-export-selection-label {
+    font-weight: bold;
+}

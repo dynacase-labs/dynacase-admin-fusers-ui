@@ -67,8 +67,38 @@ $action_desc = array(
         "acl" => "FUSERS"
     ) ,
     array(
-        "name" => "FUSERS_IUSER",
-        "short_name" => N_("refresh users intranet attributes") ,
+        "name" => "FUSERS_EXPORTFORM",
+        "short_name" => N_("account export form") ,
+        "acl" => "FUSERS_MASTER"
+    ) ,
+    array(
+        "name" => "FUSERS_IMPORTFORM",
+        "short_name" => N_("account import form") ,
+        "acl" => "FUSERS_MASTER"
+    ) ,
+    array(
+        "name" => "FUSERS_IMPORTSTATUS",
+        "short_name" => N_("account import status") ,
+        "acl" => "FUSERS_MASTER"
+    ) ,
+    array(
+        "name" => "FUSERS_IMPORTXSD",
+        "short_name" => N_("account import xsd") ,
+        "acl" => "FUSERS_MASTER"
+    ) ,
+    array(
+        "name" => "FUSERS_EXPORTSTATUS",
+        "short_name" => N_("account export status") ,
+        "acl" => "FUSERS_MASTER"
+    ) ,
+    array(
+        "name" => "FUSERS_EXPORTACCOUNTS",
+        "short_name" => N_("account export") ,
+        "acl" => "FUSERS_MASTER"
+    ) ,
+    array(
+        "name" => "FUSERS_IMPORTACCOUNTS",
+        "short_name" => N_("account import") ,
         "acl" => "FUSERS_MASTER"
     ) ,
     array(

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dynacase-admin-uis\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-31 12:10+0200\n"
-"PO-Revision-Date: 2015-03-31 12:16+0200\n"
+"POT-Creation-Date: 2016-01-29 10:19+0100\n"
+"PO-Revision-Date: 2016-01-29 10:34+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: fr\n"
@@ -18,12 +18,44 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
+msgid " Exportation options"
+msgstr "Options d'exportation"
+
+msgid " Importation options"
+msgstr "Options d'importation"
+
+#, php-format
+msgctxt "fusers_import"
+msgid "%d account processed"
+msgid_plural "%d accounts processed"
+msgstr[0] "%d seul compte a été traité"
+msgstr[1] "%d comptes ont été traités"
+
+#, php-format
+msgctxt "fusers_import"
+msgid "%d error detected"
+msgid_plural "%d errors detected"
+msgstr[0] "%d erreur détectée"
+msgstr[1] "%d erreurs détectées"
+
 #, php-format
 msgid "<b>%d group(s) to refresh</b>"
 msgstr "<b>%d groupe(s) à actualiser"
 
+msgid "Abort Account Analysing"
+msgstr "Abandon de l'analyse"
+
+msgid "Abort Account Export"
+msgstr "Abandon de l'exportation"
+
+msgid "Abort Account Import"
+msgstr "Abandon de l'importation"
+
 msgid "Access to user refresh function"
 msgstr "Accès aux fonctions de raffraichissement des utilisateurs"
+
+msgid "Account import/export preferences"
+msgstr "Préférences pour les options d'importation/exportation de comptes"
 
 msgid "All groups"
 msgstr "Tous les groupes"
@@ -34,11 +66,79 @@ msgstr "Tous les rôles"
 msgid "All users"
 msgstr "Tous les utilisateurs"
 
+msgid "Analyze file accounts"
+msgstr "Analyser le fichier de comptes"
+
 msgid "Choose family to create"
 msgstr "Choisissez une famille de document à créer"
 
 msgid "Create "
 msgstr "Créer un "
+
+msgid "Download Account XML Schema with documents parts"
+msgstr "Télécharger les schémas XML de description de compte complet avec les schémas des documents"
+
+msgid "Download Standalone Account XML Schema"
+msgstr "Télécharger le schéma XML de description de compte (sans la partie document)"
+
+msgid "Export accounts"
+msgstr "Exporter les comptes"
+
+msgctxt "fusers"
+msgid "Export groups"
+msgstr "Exporter les groupes"
+
+msgctxt "fusers"
+msgid "Export roles"
+msgstr "Exporter les rôles"
+
+msgid "Export selection"
+msgstr "Sélection"
+
+msgid "Export subgroup (substitute included)"
+msgstr ""
+"Exportation des utilisateurs dans les sous-groupes (prise en compte de la "
+"notion de suppléant)"
+
+msgctxt "fusers"
+msgid "Export users"
+msgstr "Exporter les utilisateurs"
+
+msgid "Export with Xml Schemas"
+msgstr "Exporter avec les schémas XML (zip format)"
+
+msgid "Export with crypted passwords"
+msgstr "Exporter les mots de passe cryptés"
+
+msgid "Export with relative groups"
+msgstr "Exporter les groupes des utilisateurs"
+
+msgid "Export with relative roles"
+msgstr "Exporter les rôles associés"
+
+msgid "Export with specific document informations"
+msgstr "Exporter les données documentaires spécifiques"
+
+msgid "Fuser::Family"
+msgstr "Famille"
+
+msgid "FuserNo"
+msgstr "Non"
+
+msgid "FuserYes"
+msgstr "Oui"
+
+msgid "Fusers::AccountError"
+msgstr "Erreurs"
+
+msgid "Fusers::AccountMessage"
+msgstr "Messages"
+
+msgid "Fusers::AccountNode"
+msgstr "Nœud"
+
+msgid "Fusers::AccountReference"
+msgstr "Référence du compte"
 
 msgid "Generic Management"
 msgstr "Gestion générique"
@@ -46,12 +146,33 @@ msgstr "Gestion générique"
 msgid "Group's tree state"
 msgstr "État de l'arbre des groupes"
 
+msgid "Import accounts"
+msgstr "Importer les comptes"
+
+msgid "Import analyze only"
+msgstr "Analyse seule (importation non effectuée)"
+
+msgid "Import is aborted. No one account updated"
+msgstr "Abandon de l'importation. Aucun compte n'a été créé ou mis à jour."
+
+msgid "Import stop on error"
+msgstr "Arrêt de l'importation à la première erreur détectée"
+
+msgid "Import successful done."
+msgstr "Réussite de l'importation."
+
+msgid "Informations about Accounts XML structure"
+msgstr "Information sur la structure XML du format d'importation de comptes"
+
 msgid "Modify type"
 msgstr "Modifier le type"
 
 #, php-format
 msgid "No need to refresh group"
 msgstr "Tous les groupes sont actualisés"
+
+msgid "No one import done. Analysis only."
+msgstr "Aucune importation effectuée. Seule l'analyse à été réalisée."
 
 msgid "Others"
 msgstr "Autres"
@@ -88,11 +209,17 @@ msgstr ""
 msgid "Reset"
 msgstr "Réinitialisation"
 
+msgid "Results will be displayed here"
+msgstr "Le résultat de l'importation sera affiché ici."
+
 msgid "Save"
 msgstr "Sauver"
 
 msgid "Select an action"
 msgstr "Autre type"
+
+msgid "Select an xml account file"
+msgstr "Sélectionner un fichier XML de description de comptes"
 
 msgid "System"
 msgstr "Système"
@@ -105,6 +232,30 @@ msgstr "Gestion des utilisateurs"
 
 msgid "Users Management"
 msgstr "Création, modification des utilisateurs et groupes"
+
+msgid "XML Importfile"
+msgstr "Fichier d'importation XML"
+
+msgid "account export"
+msgstr "Exportation de compte"
+
+msgid "account export form"
+msgstr "Formulaire d'exportation de compte"
+
+msgid "account export status"
+msgstr "Statut de l'exportation de compte"
+
+msgid "account import"
+msgstr "Importation de comptes"
+
+msgid "account import form"
+msgstr "Formulaire d'importation de compte"
+
+msgid "account import status"
+msgstr "Status de l'importation de compte"
+
+msgid "account import xsd"
+msgstr "Téléchargement des XSD "
 
 msgid "choose colums"
 msgstr "Choix des colonnes affichées"
@@ -208,14 +359,15 @@ msgstr "édition des colonnes"
 msgid "manage columns"
 msgstr "Gérer les colonnes"
 
+msgctxt "fusers_import"
+msgid "no errors detected"
+msgstr "Aucune erreur détectée"
+
 msgid "refresh groups"
 msgstr "Actualiseles groupes"
 
 msgid "refresh ldap entries"
 msgstr "actualiser les entrées du LDAP"
-
-msgid "refresh users intranet attributes"
-msgstr "actualisation des attributs intranet des utilisateurs"
 
 msgid "reset to default"
 msgstr "configuration par défaut"
@@ -294,6 +446,9 @@ msgstr "Voir les sous-familles"
 
 #~ msgid "label"
 #~ msgstr "Libellé"
+
+#~ msgid "refresh users intranet attributes"
+#~ msgstr "actualisation des attributs intranet des utilisateurs"
 
 #~ msgid "users list"
 #~ msgstr "liste des utilisateurs"

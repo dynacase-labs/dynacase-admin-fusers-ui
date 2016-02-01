@@ -42,6 +42,7 @@ function fusers_datatables_layout(Action & $action)
                 )
             );
             $list = getButtonList($action, "IUSER");
+            $action->lay->eset("exportLabel", sprintf(___("Export users", "fusers")));
             break;
 
         case "role":
@@ -53,6 +54,7 @@ function fusers_datatables_layout(Action & $action)
                 )
             );
             $list = getButtonList($action, "ROLE");
+            $action->lay->eset("exportLabel", sprintf(___("Export roles", "fusers")));
             break;
 
         case "group":
@@ -69,6 +71,7 @@ function fusers_datatables_layout(Action & $action)
                 )
             );
             $list = getButtonList($action, "IGROUP");
+            $action->lay->eset("exportLabel", sprintf(___("Export groups", "fusers")));
             break;
     }
     array_pop($list);
@@ -103,7 +106,7 @@ function getButtonList(Action & $action, $famid)
     );
     $action->lay->set("idmain", $doc->getPropertyValue("id"));
     $action->lay->eSet("titlemain", $doc->getTitle());
-    $action->lay->set("imgsrcmain", $doc->getIcon("", 14));
+    $action->lay->set("imgsrcmain", $doc->getIcon("", 18));
     return $list;
 }
 
