@@ -10,6 +10,12 @@
         <module comp='ge' version='1.0.0' name='dynacase-admin'/>
     </requires>
 
+    <pre-install>
+        <check type="phpclass" class="ZipArchive">
+            <help>You might need to install a php-zip package from your distribution in order to have ZipArchive support in PHP.</help>
+        </check>
+    </pre-install>
+
     <post-install>
         <process command="programs/enable_FUSERS">
             <label>Reactivate FUSERS application</label>
@@ -23,6 +29,12 @@
         </process>
         <process command="programs/update_catalog" />
     </post-install>
+
+    <pre-upgrade>
+        <check type="phpclass" class="ZipArchive">
+            <help>You might need to install a php-zip package from your distribution in order to have ZipArchive support in PHP.</help>
+        </check>
+    </pre-upgrade>
 
     <post-upgrade>
         <process command="programs/pre_migration FUSERS" />
