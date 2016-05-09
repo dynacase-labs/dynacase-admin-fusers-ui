@@ -41,25 +41,24 @@ function fusers_exportaccounts(Action & $action)
     $statusKey = $usage->addOptionalParameter("statusKey", "key for see progress");
     $group = $usage->addOptionalParameter("selectedGroup", "Sub group restriction");
     $deepGroup = $usage->addOptionalParameter("deepGroup", "Export sub groups", array(
-            "true",
-            "false"
-        ) , "true") === "true";
+        "true",
+        "false"
+    ) , "true") === "true";
     
     $filter = $usage->addOptionalParameter("filters", "additionnal filters");
     $usage->verify();
-
     // Memo user preferences
-    $uprefs=json_decode($action->getParam("FUSERS_PORTPREF", "{}"), true);
-    $uprefs[$type]=array(
-        "deepGroup"=>$deepGroup,
-        "exportRole"=>$exportRole,
-        "exportGroup"=>$exportGroup,
-        "exportPassword"=>$exportPassword,
-        "exportSchema"=>$exportSchema,
-        "exportDocument"=>$exportDocument
-        );
+    $uprefs = json_decode($action->getParam("FUSERS_PORTPREF", "{}") , true);
+    $uprefs[$type] = array(
+        "deepGroup" => $deepGroup,
+        "exportRole" => $exportRole,
+        "exportGroup" => $exportGroup,
+        "exportPassword" => $exportPassword,
+        "exportSchema" => $exportSchema,
+        "exportDocument" => $exportDocument
+    );
     $action->setParamU("FUSERS_PORTPREF", json_encode($uprefs));
-
+    
     setMaxExecutionTimeTo(-1); // May be long
     $export = new \Dcp\Core\ExportAccounts();
     
@@ -97,7 +96,7 @@ function fusers_exportaccounts(Action & $action)
     }
     
     if ($group) {
-        $groupAccount = new_doc("", $group);
+        $groupAccount = new_Doc("", $group);
         if ($groupAccount->isAffected()) {
             $basename = $groupAccount->getTitle();
             if (!$deepGroup) {
@@ -117,7 +116,7 @@ function fusers_exportaccounts(Action & $action)
             "us_fname" => "firstname",
             "us_mail" => "mail",
             "grp_name" => "lastname",
-            "family"  => "...",
+            "family" => "...",
             "title" => "(coalesce(firstname,'') || coalesce(lastname,''))"
         );
         
@@ -126,12 +125,10 @@ function fusers_exportaccounts(Action & $action)
                 //print $matchingKeys[$key].", $value\n<br/>";
                 if ($key === "family") {
                     $search->filterFamily($value);
-                    $basename .= "(" . getDocTitle($value) . ")";
+                    $basename.= "(" . getDocTitle($value) . ")";
                 } else {
-                    $search->addFilter(
-                        $matchingKeys[$key] . " ~* '%s'", $value
-                    );
-                    $basename .= "(" . $value . ")";
+                    $search->addFilter(sprintf("%s ~* %s", $matchingKeys[$key], pg_escape_literal($value)));
+                    $basename.= "(" . $value . ")";
                 }
             }
         }
@@ -153,14 +150,15 @@ function fusers_exportaccounts(Action & $action)
     if ($export->isAborted()) {
         $basename.= " (ABORTED)";
     }
-    
+    /* Sanitize $basename */
+    $basename = str_replace('/', '_', $basename);
     if (!$exportSchema) {
         Http_Download($xmlFileSource, "xml", $basename, true, "text/xml");
     } else {
         file_put_contents(sprintf("%s/$basename.xml", $schemaDirectory) , $xmlFileSource);
         $zipFile = sprintf("%s/$basename.zip", $schemaDirectory);
         $zip = new ZipArchive();
-        $zip->open($zipFile, ZIPARCHIVE::CREATE);
+        $zip->open($zipFile, ZipArchive::CREATE);
         chdir($schemaDirectory);
         $handle = opendir($schemaDirectory);
         if ($handle) {
@@ -171,19 +169,19 @@ function fusers_exportaccounts(Action & $action)
             }
             closedir($handle);
         }
-
-        $handle = opendir($schemaDirectory."/".$export::XSDDIR);
+        
+        $handle = opendir($schemaDirectory . "/" . $export::XSDDIR);
         if ($handle) {
             while (false !== $f = readdir($handle)) {
                 if (preg_match("/.(xml|xsd)$/", $f)) {
-                    $zip->addFile($export::XSDDIR."/".$f);
+                    $zip->addFile($export::XSDDIR . "/" . $f);
                 }
             }
             closedir($handle);
         }
         $zip->close();
-
-        Http_DownloadFile($zipFile, "$basename.zip", "application/x-zip");
+        
+        Http_DownloadFile($zipFile, "$basename.zip", "application/x-zip", false, true, true);
     }
     $action->lay->template = "";
     $action->lay->noparse = true;
