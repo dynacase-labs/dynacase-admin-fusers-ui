@@ -4,16 +4,15 @@
  * @author Anakeen
  * @package FDL
 */
-
 /**
  */
 include_once ("FDL/Lib.Dir.php");
 
-function fusers_maincols(Action &$action)
+function fusers_maincols(Action & $action)
 {
     
     global $_GET, $_POST, $ZONE_ARGS;
-    $dbaccess = $action->getParam("FREEDOM_DB");
+    $dbaccess = $action->dbaccess;
     // Get default visibilty => Abstract view from freedom
     $sfam = GetHttpVars("dfam", $action->getParam("DEFAULT_FAMILY"));
     $action->lay->eSet("dfam", $sfam);
@@ -40,7 +39,7 @@ function fusers_maincols(Action &$action)
             $cols[$v->id] = array(
                 "l" => ($v->isInAbstract == 1 ? 1 : 0) ,
                 "order" => $v->ordered,
-                "label" => $v->fieldSet->getLabel().'/'.$v->getLabel()
+                "label" => $v->fieldSet->getLabel() . '/' . $v->getLabel()
             );
         }
     }
@@ -80,7 +79,7 @@ function fusers_maincols(Action &$action)
             }
         }
     }
-    $vcols=array();
+    $vcols = array();
     foreach ($cols as $k => $v) {
         $vcols[] = array(
             "id" => $k,
