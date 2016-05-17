@@ -128,10 +128,8 @@ function fusers_list(Action & $action)
  */
 function fusers_getChildsGroup($id, $groups, $groupIcon)
 {
-    static $dbaccess;
     static $doc;
-    if (!$dbaccess) $dbaccess = getParam("FREEDOM_DB");
-    if (!$doc) $doc = createTmpDoc($dbaccess, 1);
+    if (!$doc) $doc = createTmpDoc('', 1);
     $tlay = array();
     foreach ($groups as $k => $v) {
         if ($v["idgroup"] == $id) {
@@ -144,7 +142,7 @@ function fusers_getChildsGroup($id, $groups, $groupIcon)
             $tlay[$k] = $v;
             $tlay[$k]["SUBUL"] = fusers_getChildsGroup($v["id"], $groups, $groupIcon);
             if ($fid) {
-                $tdoc = getTDoc($dbaccess, $fid);
+                $tdoc = getTDoc('', $fid);
                 $icon = $doc->getIcon($tdoc["icon"], 14);
                 $tlay[$k]["icon"] = $icon;
             } else {
@@ -166,4 +164,3 @@ function cmpgroup($a, $b)
 {
     return strcasecmp($a['lastname'], $b['lastname']);
 }
-?>

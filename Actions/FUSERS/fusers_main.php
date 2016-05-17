@@ -30,7 +30,7 @@ function fusers_main(Action & $action)
         if (substr($k, 0, 4) == "rqi_") $rqi_form[substr($k, 4) ] = $v;
     }
     
-    $dbaccess = $action->getParam("FREEDOM_DB");
+    $dbaccess = $action->dbaccess;
     $action->parent->AddJsRef($action->GetParam("CORE_JSURL") . "/subwindow.js");
     $action->parent->AddJsRef($action->GetParam("CORE_PUBURL") . "/FDC/Layout/setparamu.js");
     
@@ -78,7 +78,7 @@ function fusers_main(Action & $action)
     $action->lay->eSet("usedefaultview", GetHttpVars("usedefaultview"));
     $action->lay->eSet("viewone", GetHttpVars("viewone"));
     $action->lay->eSet("cols", GetHttpVars("cols"));
-
+    
     $sfullsearch = (GetHttpVars("sfullsearch", "") == "on" ? true : false);
     $action->lay->set("fullsearch", $sfullsearch);
     
