@@ -121,22 +121,22 @@ msgid "Fuser::Family"
 msgstr ""
 
 msgid "FuserNo"
-msgstr ""
+msgstr "No"
 
 msgid "FuserYes"
-msgstr ""
+msgstr "Yes"
 
 msgid "Fusers::AccountError"
-msgstr ""
+msgstr "Errors"
 
 msgid "Fusers::AccountMessage"
-msgstr ""
+msgstr "Messages"
 
 msgid "Fusers::AccountNode"
-msgstr ""
+msgstr "Node"
 
 msgid "Fusers::AccountReference"
-msgstr ""
+msgstr "Reference"
 
 msgid "Generic Management"
 msgstr ""
